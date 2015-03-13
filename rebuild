@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+var path = require("path");
+var rimraf = require("rimraf");
+var destDir = path.join(__dirname,"build");
+rimraf(destDir, function() {
+   process.argv = process.argv.slice(0,2).concat(["build", destDir]);
+   require("broccoli").cli();
+});

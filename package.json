@@ -1,0 +1,62 @@
+{
+  "name": "webappSkeleton",
+  "preferGlobal": "true",
+  "version": "0.0.0",
+  "title": "Web application skeleton",
+  "description": "Skeleton of a web application, with preconfigured build process, using broccoli, angular2, koa and more.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davdiv/webappSkeleton.git"
+  },
+  "author": {
+    "name": "DivDE",
+    "email": "divde@free.fr"
+  },
+  "bin": "start",
+  "scripts": {
+    "postinstall": "node rebuild",
+    "start": "node start",
+    "test": "true"
+  },
+  "license": {
+    "type": "AGPLv3",
+    "url": "http://www.gnu.org/licenses/agpl-3.0"
+  },
+  "bugs": {
+    "url": "https://github.com/davdiv/webappSkeleton/issues"
+  },
+  "homepage": "https://github.com/davdiv/webappSkeleton",
+  "dependencies": {
+    "angular2": "2.0.0-alpha.12",
+    "bootstrap": "3.3.2",
+    "broccoli": "0.15.0",
+    "broccoli-clean-css": "1.0.0",
+    "broccoli-concat": "0.0.12",
+    "broccoli-filter": "0.1.11",
+    "broccoli-funnel": "0.2.2",
+    "broccoli-gzip": "0.2.0",
+    "broccoli-merge-trees": "0.2.1",
+    "broccoli-string-replace": "0.0.2",
+    "broccoli-timepiece": "0.3.0",
+    "broccoli-uglify-js": "0.1.3",
+    "broccoli-wrap": "0.0.2",
+    "co": "4.4.0",
+    "denodeify": "1.2.1",
+    "es6-module-loader": "0.15.0",
+    "koa": "0.18.1",
+    "koa-helmet": "0.0.3",
+    "koa-mount": "1.3.0",
+    "koa-route": "2.4.0",
+    "koa-send": "1.3.1",
+    "minimist": "1.1.1",
+    "mongodb": "1.4.34",
+    "page": "1.6.1",
+    "raw-body": "1.3.3",
+    "rimraf": "2.3.2",
+    "systemjs": "0.15.0"
+  },
+  "engines": {
+    "iojs": ">= 1.5.1",
+    "npm": ">= 2.7.0"
+  }
+}

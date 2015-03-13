@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+var cli = require("./src/server/main.js");
+cli(process.argv.slice(2)).catch(function(error) {
+    console.error(error.stack);
+    process.exit(1);
+});
