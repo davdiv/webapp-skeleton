@@ -8,7 +8,7 @@ import {Component, Template, bootstrap} from 'angular2/angular2';
 @Template({
     inline: '<br>Current page: {{currentPage.context.path}} ({{currentPage.definition.path}})<br><a href="/">Home</a>'
 })
-class MainClass {
+class Main {
     currentPage = {};
     constructor() {
         pagesConfig.forEach((curPage) => {
@@ -21,9 +21,4 @@ class MainClass {
     }
 }
 
-import {ShadowDomStrategy, EmulatedUnscopedShadowDomStrategy} from "angular2/src/core/compiler/shadow_dom_strategy";
-import {StyleUrlResolver} from "angular2/src/core/compiler/style_url_resolver";
-import {bind} from "angular2/di";
-bootstrap(MainClass, [bind(ShadowDomStrategy).toFactory((styleUrlResolver) => {
-    return new EmulatedUnscopedShadowDomStrategy(styleUrlResolver,document.head);
-},[StyleUrlResolver])]);
+bootstrap(Main);
