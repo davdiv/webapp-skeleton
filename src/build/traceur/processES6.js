@@ -22,6 +22,7 @@ ProcessES6.prototype.processString = function (originalSource, fileName) {
         var typeAssertions = !!typeAssertionsModule;
 
         return traceur.compile(originalSource, {
+            asyncFunctions: true,
             modules : 'instantiate',
             moduleName : true,
             annotations : true,

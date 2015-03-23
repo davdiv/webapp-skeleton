@@ -24,6 +24,7 @@ ProcessCJS.prototype.processString = function (originalSource, fileName) {
 
         var moduleName = fileName.replace(/\.js$/, "");
         var options = {
+            asyncFunctions: true,
             script : true,
             annotations : true,
             types : true,
