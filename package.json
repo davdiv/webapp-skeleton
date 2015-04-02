@@ -33,7 +33,7 @@
     "broccoli-clean-css": "1.0.0",
     "broccoli-concat": "0.0.12",
     "broccoli-filter": "0.1.11",
-    "broccoli-funnel": "0.2.2",
+    "broccoli-funnel": "0.2.3",
     "broccoli-gzip": "0.2.0",
     "broccoli-merge-trees": "0.2.1",
     "broccoli-string-replace": "0.0.2",

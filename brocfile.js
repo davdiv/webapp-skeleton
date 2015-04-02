@@ -1,4 +1,4 @@
-var Funnel = require("broccoli-funnel");
+var funnel = require("broccoli-funnel");
 var wrap = require('broccoli-wrap');
 var concat = require('broccoli-concat');
 var mergeTrees = require('broccoli-merge-trees');
@@ -15,7 +15,7 @@ var includes = fs.readdirSync(includesDir).filter(function (fileName) {
 
 var addAppInitCode = function (tree) {
     return mergeTrees([
-        wrap(new Funnel(tree, {
+        wrap(funnel(tree, {
             include : [ "runtime.js" ],
             getDestinationPath : function () {
                 return "app.js";
@@ -23,7 +23,7 @@ var addAppInitCode = function (tree) {
         }), {
             wrapper : [ '',
                 '\nSystem.baseURL=document.currentScript.src.replace(/app\.js$/, "");\nSystem.import("main");' ]
-        }), new Funnel(tree, {
+        }), funnel(tree, {
             exclude : [ "runtime.js" ]
         }) ]);
 };
@@ -39,7 +39,7 @@ var cleanCSSFilter = function (tree) {
         }
         return trueProcessString.apply(this, arguments);
     };
-    return new Funnel(res, {
+    return funnel(res, {
         include : [ "app.css" ]
     });
 };
@@ -61,11 +61,11 @@ var packagedStatics = function (options) {
         outputFile : '/runtime.js',
     }));
 
-    var packagedCSS = cleanCSSFilter(new Funnel(unpackaged, {
+    var packagedCSS = cleanCSSFilter(funnel(unpackaged, {
         include : [ "**/*.css" ]
     }));
 
-    var packagedRemainingStatics = new Funnel(unpackaged, {
+    var packagedRemainingStatics = funnel(unpackaged, {
         exclude : [ "**/*.css", "**/*.js" ]
     });
 
@@ -75,7 +75,7 @@ var packagedStatics = function (options) {
 var allStatics = function () {
     var env = process.env.NODE_ENV || "development";
     console.log("Packaging environment: " + env);
-    var unpackaged = new Funnel(addAppInitCode(unpackagedStatics({
+    var unpackaged = funnel(addAppInitCode(unpackagedStatics({
         debug : true,
         typeAssertionsModule : "rtts_assert/rtts_assert"
     })), {
@@ -84,7 +84,7 @@ var allStatics = function () {
     if (env === "development") {
         return unpackaged;
     }
-    return gzipFiles(mergeTrees([ unpackaged, new Funnel(packagedStatics(), {
+    return gzipFiles(mergeTrees([ unpackaged, funnel(packagedStatics(), {
         destDir : "client/statics"
     }) ]), {
         extensions : [ 'js', 'css' ],

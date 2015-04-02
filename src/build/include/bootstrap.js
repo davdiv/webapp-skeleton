@@ -1,6 +1,6 @@
-var Funnel = require('broccoli-funnel');
+var funnel = require('broccoli-funnel');
 
-var bootstrap = new Funnel("node_modules/bootstrap/dist", {
+var bootstrap = funnel("node_modules/bootstrap/dist", {
     exclude : [ "**/*.js", "**/*.map", "**/*.min.*" ],
     destDir : "bootstrap"
 });

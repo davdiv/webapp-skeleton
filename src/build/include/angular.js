@@ -1,9 +1,9 @@
-var Funnel = require('broccoli-funnel');
+var funnel = require('broccoli-funnel');
 var mergeTrees = require('broccoli-merge-trees');
 var processES6 = require('../traceur/processES6');
 
 var filterAndRenameES6 = function (tree, destDir) {
-    return new Funnel(tree, {
+    return funnel(tree, {
         destDir : destDir,
         include : [ "*.es6", "src/**/*.es6" ],
         getDestinationPath : function (fileName) {

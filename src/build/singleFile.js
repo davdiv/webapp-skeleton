@@ -1,10 +1,10 @@
-var Funnel = require('broccoli-funnel');
+var funnel = require('broccoli-funnel');
 
 module.exports = function (sourceTree, oldName, newName) {
     if (!newName) {
         newName = oldName;
     }
-    return new Funnel(sourceTree, {
+    return funnel(sourceTree, {
         files : [ oldName ],
         getDestinationPath : function () {
             return newName;
