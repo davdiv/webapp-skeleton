@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/davdiv/webappSkeleton",
   "dependencies": {
-    "angular2": "2.0.0-alpha.18",
+    "angular2": "2.0.0-alpha.22",
     "bootstrap": "3.3.4",
     "broccoli": "0.16.2",
     "broccoli-clean-css": "1.0.0",

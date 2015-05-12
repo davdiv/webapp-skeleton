@@ -1,12 +1,12 @@
 import page from 'page';
 import pagesConfig from 'common/pagesConfig';
-import {Component, Template, bootstrap} from 'angular2/angular2';
+import {ComponentAnnotation as Component, ViewAnnotation as View, bootstrap} from "angular2/angular2"
 
 @Component({
     selector:"app"
 })
-@Template({
-    inline: '<br>Current page: {{currentPage.context.path}} ({{currentPage.definition.path}})<br><a href="/">Home</a>'
+@View({
+    template: '<br>Current page: {{currentPage.context.path}} ({{currentPage.definition.path}})<br><a href="/">Home</a>'
 })
 class Main {
     currentPage = {};

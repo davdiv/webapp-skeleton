@@ -18,7 +18,7 @@ module.exports = function (options) {
     options = options || {};
     var debug = options.debug;
     var angular = filterAndRenameES6("node_modules/angular2/es6/" + (debug ? "dev" : "prod"), "angular2");
-    var rx = processCJS(singleFile("node_modules/angular2/node_modules", "rx/dist/rx.all.js"));
+    var rx = processCJS(singleFile("node_modules/angular2/node_modules", "rx/dist/rx.all.js", "rx.js"));
     var trees = [angular, rx];
     if (debug) {
         var rtts_assert = filterAndRenameES6("node_modules/angular2/node_modules/rtts_assert/es6", "rtts_assert");
