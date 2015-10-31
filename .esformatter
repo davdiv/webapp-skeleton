@@ -1,0 +1,14 @@
+{
+    "plugins": [
+        "esformatter-jsx"
+    ],
+    "jsx": {
+        "htmlOptions": {
+            "indent_char": " ",
+            "indent_size": 4
+        }
+    },
+    "indent": {
+        "value": "    "
+    }
+}
